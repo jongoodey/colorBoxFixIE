@@ -1,0 +1,2 @@
+This is a quick and dirty fix for anyone having issues with a color box still plaing in the background on IE9
+
