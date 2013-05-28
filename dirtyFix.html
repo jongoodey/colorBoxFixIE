@@ -1,0 +1,17 @@
+<form style="display:none"><input onclick="history.go(0)" type="button" value="Refresh" id="refresh"/></form>
+<script>
+jQuery(function($){
+	$('#cboxOverlay').click(function(){
+		$('#refresh').trigger('click',function(){
+		})
+	});
+});
+</script>
+<script>
+jQuery(function($){
+	$('#cboxClose').click(function(){
+		$('#refresh').trigger('click',function(){
+		})
+	});
+});
+</script>
