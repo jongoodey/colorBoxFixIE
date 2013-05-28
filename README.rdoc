@@ -1,2 +1,5 @@
-This is a quick and dirty fix for anyone having issues with a color box still plaing in the background on IE9
+This is a quick and dirty fix for anyone having issues with a color box still playing in the background on IE9
 
+dont forget to add before the script if you dont already have it installed
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
