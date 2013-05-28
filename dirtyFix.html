@@ -1,17 +1,46 @@
 <form style="display:none"><input onclick="history.go(0)" type="button" value="Refresh" id="refresh"/></form>
-<script>
-jQuery(function($){
-	$('#cboxOverlay').click(function(){
-		$('#refresh').trigger('click',function(){
-		})
-	});
-});
-</script>
-<script>
-jQuery(function($){
-	$('#cboxClose').click(function(){
-		$('#refresh').trigger('click',function(){
-		})
-	});
-});
-</script>
+
+<?php
+preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
+
+if (count($matches)>1){
+  //Then we're using IE
+  $version = $matches[1];
+
+  switch(true){
+    case ($version<=8):
+      //IE 8 or under!?>
+    <script>
+		jQuery(function($){
+			console.log('why are you are using ie8!!!');
+		});
+	</script>
+      <?php
+      break;
+
+    case ($version==9):
+      //IE9!?>
+	<script>
+		jQuery(function($){
+			$('#cboxOverlay').click(function(){
+				$('#refresh').trigger('click',function(){
+				})
+			});
+		});
+	</script>
+	<script>
+		jQuery(function($){
+			$('#cboxClose').click(function(){
+				$('#refresh').trigger('click',function(){
+				})
+			});
+		});
+	</script>
+      <?php
+      break;
+
+    default:
+      //You get the idea
+  }
+}
+?>
