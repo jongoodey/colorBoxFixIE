@@ -10,38 +10,34 @@ if (count($matches)>1){
   switch(true){
     case ($version<=8):
       //IE 8 or under!?>
-    <script>
-		jQuery(function($){
-			console.log('why are you are using ie8!!!');
-		});
-	</script>
-	<?php
-		//header( 'Location: INSERT URL HERE' ) ;
+      <script>
+        (function () {
+          console.log('why are you are using ie8!!!');
+        })();
+      </script>
+      <?php
+      //header( 'Location: INSERT URL HERE' ) ;
       break;
 
-    case ($version==9):
+      case ($version==9):
       //IE9!?>
-	<script>
-		jQuery(function($){
-			$('#cboxOverlay').click(function(){
-				$('#refresh').trigger('click',function(){
-				})
-			});
-		});
-	</script>
-	<script>
-		jQuery(function($){
-			$('#cboxClose').click(function(){
-				$('#refresh').trigger('click',function(){
-				})
-			});
-		});
-	</script>
+      <script>
+       $(document).ready(function(){
+        $('#cboxOverlay').click(function(){
+          $('#refresh').trigger('click',function(){
+          });
+        });
+        $('#cboxClose').click(function(){
+          $('#refresh').trigger('click',function(){
+          })
+        });
+       });
+      </script>
       <?php
       break;
 
-    default:
+      default:
       //You get the idea
+    }
   }
-}
 ?>
